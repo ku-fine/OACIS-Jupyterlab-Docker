@@ -59,7 +59,7 @@ See [OACIS documentation](http://crest-cassia.github.io/oacis/).
 - Visit http://localhost:8888 to access the Jupyterlab page. You may change the port by specifying the `-j` option.
 
 <img src="./fig/jupyterlab.png" width="600" style="display: block; margin:auto;">
-Note that an example notebook **Example.ipynb** is present at the top level, providing the most common OACIS Python API. For a more complete reference, refer to [the OACIS documentation](https://crest-cassia.github.io/oacis/en/api_python.html).
+Note that an example notebook [_Example.ipynb_](oacisjupyterlab/Example.ipynb) is present at the top level, providing the most common OACIS Python API. For a more complete reference, refer to [the OACIS documentation](https://crest-cassia.github.io/oacis/en/api_python.html).
 
 ### 4. Stopping the container temporarily
 
@@ -238,7 +238,7 @@ See the document for details: [How to setup host on OACIS](http://crest-cassia.g
 
 Add a host with the reserved name "**docker-host**" to use your host OS as a computational host. You'll be able to run your simulators on your host OS.
 
-## synchronizing data with another OACIS
+## Synchronizing data with another OACIS
 
 When you would like to copy your data to another OACIS instance in another machine, run a shell script like the following. (Replace `your_host_name` with your actual host name).
 
@@ -251,15 +251,16 @@ rsync -ahv --progress Result/ your_remote_host:oacis_docker/Result
 ssh your_remote_host '~/oacis_docker/oacis_restore_db.sh'
 ```
 
-## updating OACIS image
+## Updating OACIS image
 
-Take the following steps to update the docker image of OACIS.
+Take the following steps to update the docker image of OACIS on which this image relies on.
 
 1. `./oacis_dump_db.sh`
 2. `./oacis_terminate.sh`
-3. `./build_oacisjupyterlab_image.sh <version>` where `<version>` is the version of the OACIS container to be used
-4. `./oacis_boot.sh`
-5. `./oacis_restore_db.sh`
+3. `./oacis_boot.sh --build-image=<version>`
+4. `./oacis_restore_db.sh`
+
+Where `<version>` corresponds to a version available for the [oacis/oacis](https://hub.docker.com/r/oacis/oacis) image on DockerHub.
 
 # License
 **oacis_docker** on which this project is based is a part of OACIS. [OACIS](https://github.com/crest-cassia/oacis) is published under the term of the MIT License (MIT). Copyright (c) 2014-2025 RIKEN AICS, RIKEN R-CCS
