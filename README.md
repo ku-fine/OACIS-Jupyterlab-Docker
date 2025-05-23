@@ -11,17 +11,17 @@ As such, most credit should go to the OACIS developers.
 - https://docs.docker.com/get-docker/
 - https://docs.docker.com/compose/install/
 
-### 1. Clone oacisjupyterlab_docker
+### 1. Clone this repository
 
 ```shell
 $ git clone https://github.com/ku-fine/OACIS-Jupyterlab-Docker.git
-$ cd oacisjupyterlab_docker
+$ cd OACIS-Jupyterlab-Docker
 ```
 
 ### 2. Create the ku-fine/oacisjupyterlab image
 
 This image extends the `oacis/oacis` image. The last tested compatible version is `v3.11.1`.
-To create the `ku-fine/oacis/jupyterlab` image, simply run the helper script `build_oacisjupyterlab.sh`.
+To create the `ku-fine/oacis/jupyterlab` image, simply run the helper script `oacis_build.sh`.
 
 ```shell
 $ ./oacis_build.sh
