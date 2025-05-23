@@ -14,7 +14,7 @@ As such, most credit should go to the OACIS developers.
 ### 1. Clone oacisjupyterlab_docker
 
 ```shell
-$ git clone https://github.com/ku-fine/oacisjupyterlab_docker.git
+$ git clone https://github.com/ku-fine/OACIS-Jupyterlab-Docker.git
 $ cd oacisjupyterlab_docker
 ```
 
@@ -33,7 +33,7 @@ If you want to build this image by extending a specific version of the OACIS doc
 $ ./oacis_build.sh v3.11.1
 ```
 
-By default, the created image *fku-fine/oacisjupyterlab** adopts the version of the underlying **oacis/oacis** container that it extends. After running the `oacis_build.sh` script, running the `docker images` command will show the created image:
+By default, the created image **ku-fine/oacisjupyterlab** adopts the version of the underlying **oacis/oacis** container that it extends. After running the `oacis_build.sh` script, running the `docker images` command will show the created image:
 
 ```shell
 $ docker images
