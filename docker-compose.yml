@@ -1,0 +1,16 @@
+services:
+  oacis:
+    image: ku-fine/oacisjupyterlab:${OACIS_IMAGE_TAG:-latest}
+    platform: linux/amd64
+    volumes:
+      - ./Result:/home/oacis/oacis/public/Result_development
+    environment:
+      - LOCAL_UID
+      - LOCAL_GID
+      - LOCAL_USER
+    ports:
+      - "${HOST_IP:-127.0.0.1}:${OACIS_PORT:-3000}:3000"
+      - "${HOST_IP:-127.0.0.1}:${JUPYTER_PORT:-8888}:8888"
+    tty: true
+    extra_hosts:
+      - "gateway.docker.internal:host-gateway"
