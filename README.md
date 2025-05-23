@@ -58,6 +58,9 @@ See [OACIS documentation](http://crest-cassia.github.io/oacis/).
 
 - Visit http://localhost:8888 to access the Jupyterlab page. You may change the port by specifying the `-j` option.
 
+<img src="./fig/jupyterlab.png" width="600" style="display: block; margin:auto;">
+Note that an example notebook **Example.ipynb** is present at the top level, providing the most common OACIS Python API. For a more complete reference, refer to [the OACIS documentation](https://crest-cassia.github.io/oacis/en/api_python.html).
+
 ### 4. Stopping the container temporarily
 
 ```shell
